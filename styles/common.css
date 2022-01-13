@@ -1,0 +1,249 @@
+.isometric {
+  -webkit-transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg);
+          transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  min-height: 100vh;
+  color: #fff;
+  padding: 1rem;
+  background: -webkit-gradient(linear, left top, right bottom, from(black), to(rgba(0, 0, 0, 0.8)));
+  background: linear-gradient(to right bottom, black, rgba(0, 0, 0, 0.8));
+}
+
+.container {
+  position: relative;
+  max-width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: ([col] minmax(300px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, [col] minmax(300px, 1fr));
+  -ms-grid-rows: [row] minmax(100px, auto);
+      grid-template-rows: [row] minmax(100px, auto);
+  margin: 10px;
+  grid-auto-flow: dense;
+  grid-gap: 10px;
+  overflow: hidden;
+  /*
+    * Loop over nest map and assign column and row span sizes
+    *
+    *@param $key - name of nested map, 
+    *              in this case using it like an index
+    *
+    *@param $value - in this case another map
+    */
+}
+
+.container .box {
+  padding: 20px;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  -webkit-animation: bounceIn 1s ease;
+          animation: bounceIn 1s ease;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.container .box:nth-of-type(1) {
+  background-color: #750e0e;
+}
+
+.container .box:nth-of-type(2) {
+  background-color: #ee1818;
+}
+
+.container .box:nth-of-type(3) {
+  background-color: #0e5d75;
+}
+
+.container .box:nth-of-type(4) {
+  background-color: #3a3cce;
+}
+
+.container .box:nth-of-type(5) {
+  background-color: #750e4a;
+}
+
+.container .box:nth-of-type(6) {
+  background-color: #0e7570;
+}
+
+.container .box:nth-of-type(7) {
+  background-color: #b4da6e;
+}
+
+.container .box:nth-of-type(8) {
+  background-color: #d4bf44;
+}
+
+.container .box:nth-of-type(9) {
+  background-color: #721313;
+}
+
+.container .box .content {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.container .box .content:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.container .box .content img {
+  position: relative;
+  max-width: 100px;
+  margin-bottom: 10px;
+}
+
+.container .box:nth-child(1) {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.container .box:nth-child(2) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.container .box:nth-child(3) {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.container .box:nth-child(4) {
+  grid-column: span 1;
+  grid-row: span 3;
+}
+
+.container .box:nth-child(5) {
+  grid-column: span 3;
+  grid-row: span 1;
+}
+
+.container .box:nth-child(6) {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.container .box:nth-child(7) {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.container .box:nth-child(8) {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.container .box:nth-child(9) {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+@media (max-width: 991px) {
+  .container {
+    -ms-grid-columns: (minmax(50%, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+    -ms-grid-rows: minmax(auto, auto);
+        grid-template-rows: minmax(auto, auto);
+  }
+  .container .box {
+    grid-column: unset !important;
+    grid-row: unset !important;
+  }
+}
+
+@-webkit-keyframes scaleIn {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3) translate3d(0, 0, 0);
+            transform: scale(0.3) translate3d(0, 0, 0);
+  }
+  50% {
+    opacity: 0.9;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  80% {
+    opacity: 1;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1) translate3d(0, 0, 0);
+            transform: scale(1) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3) translate3d(0, 0, 0);
+            transform: scale(0.3) translate3d(0, 0, 0);
+  }
+  50% {
+    opacity: 0.9;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  80% {
+    opacity: 1;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1) translate3d(0, 0, 0);
+            transform: scale(1) translate3d(0, 0, 0);
+  }
+}
+/*# sourceMappingURL=common.css.map */

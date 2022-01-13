@@ -1,0 +1,59 @@
+.big {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.big div {
+  position: absolute;
+  top: calc((50% - 1500px));
+  left: calc((50% - 1500px));
+  width: 3000px;
+  height: 3000px;
+  border-radius: 50%;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.big div:nth-child(1) {
+  background: #fffcee;
+  -webkit-animation: big .5s 4s forwards;
+          animation: big .5s 4s forwards;
+}
+
+.big div:nth-child(2) {
+  background: #bd8e99;
+  -webkit-animation: big .5s 4.5s forwards;
+          animation: big .5s 4.5s forwards;
+}
+
+.big div:nth-child(3) {
+  background: #9e3f57;
+  -webkit-animation: big .5s 5s forwards;
+          animation: big .5s 5s forwards;
+}
+
+@-webkit-keyframes big {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes big {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+/*# sourceMappingURL=animations.css.map */

@@ -1,0 +1,28 @@
+.big {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+  .big div{
+    
+    position: absolute;
+    top: calc((50% - 1500px));
+    left: calc((50% - 1500px));
+    width: 3000px;
+    height: 3000px;
+    border-radius: 50%;
+    transform: scale(0);
+  }
+  
+  .big div:nth-child(1) { background: #fffcee; animation: big .5s 4s forwards;}
+  .big div:nth-child(2) { background: #bd8e99; animation: big .5s 4.5s forwards;}
+  .big div:nth-child(3) { background: #9e3f57;  animation: big .5s 5s forwards;}
+  
+  @keyframes big {
+    0% {  transform: scale(0);}
+    100% {transform: scale(1);}
+  }
+
+  
